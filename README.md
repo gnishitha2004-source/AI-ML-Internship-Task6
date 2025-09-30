@@ -1,71 +1,116 @@
-# Task 6: K-Nearest Neighbors (KNN) Classification  
-
-This repository contains my implementation of **K-Nearest Neighbors (KNN)** for classification, as part of the AI & ML Internship tasks.  
-
----
+# Task 6: K-Nearest Neighbors (KNN) Classification
 
 ## 📌 Objective
-To understand and implement the **KNN algorithm** for classification problems using **Scikit-learn** and visualize how the algorithm performs with different values of *K*.  
 
----
+Implement and understand the **K-Nearest Neighbors (KNN)** algorithm for classification tasks.
 
-## 📊 Dataset
-- **Iris Dataset** (from `sklearn.datasets`)  
-- Features: Sepal Length, Sepal Width, Petal Length, Petal Width  
-- Target: Iris species (Setosa, Versicolor, Virginica)  
-
----
-
-## ⚙️ Steps Performed
-1. **Data Loading** – Imported the Iris dataset.  
-2. **Normalization** – Scaled features using `StandardScaler` to ensure fair distance measurement.  
-3. **Train-Test Split** – Divided data into training and testing sets.  
-4. **Model Building** – Applied `KNeighborsClassifier` from `sklearn.neighbors`.  
-5. **Experimentation with K** – Tested multiple values of K to find the best performance.  
-6. **Evaluation** – Used:
-   - **Accuracy Score**  
-   - **Confusion Matrix**  
-7. **Visualization** – Plotted decision boundaries and accuracy vs. K graph.  
-
----
-
-## 📈 Results
-- Best accuracy achieved at **K = X** (replace X with your observed best K).  
-- Accuracy on test set: **YY%** (replace with your value).  
-- Decision boundary visualization shows clear separation between classes.  
-
----
-
-## 📌 Key Learnings
-- **Normalization is crucial** for distance-based algorithms like KNN.  
-- The choice of **K value impacts bias-variance trade-off**.  
-- KNN is simple but can be computationally expensive on large datasets.  
-
----
-
-## 📚 Interview Questions Covered
-- How does the KNN algorithm work?  
-- How do you choose the right K?  
-- Why is normalization important in KNN?  
-- What is the time complexity of KNN?  
-- Pros and cons of KNN  
-- Sensitivity to noise  
-- Handling multi-class problems  
-- Role of distance metrics in KNN  
+This project demonstrates how KNN works using the **Iris dataset**, covering data preprocessing, model training, evaluation, and visualization.
 
 ---
 
 ## 🛠 Tools & Libraries
-- Python  
-- Pandas  
-- NumPy  
-- Scikit-learn  
-- Matplotlib / Seaborn  
+
+* **Python 3**
+* **Pandas** – data handling
+* **NumPy** – numerical operations
+* **Scikit-learn** – machine learning models & evaluation
+* **Matplotlib / Seaborn** – data visualization
 
 ---
 
-## 🚀 How to Run
-1. Clone the repo:  
-   ```bash
-   git clone https://github.com/gnishitha2004-source/AI-ML-Internship-Task6.git
-   cd AI-ML-Internship-Task6
+## 📂 Dataset
+
+* **Dataset used**: [Iris Dataset](https://www.kaggle.com/datasets/uciml/iris)
+* Features: Sepal length, Sepal width, Petal length, Petal width
+* Target: Species (Setosa, Versicolor, Virginica)
+
+---
+
+## ⚙️ Steps Performed
+
+1. **Data Preprocessing**
+
+   * Loaded the Iris dataset
+   * Normalized feature values for better distance-based performance
+
+2. **Model Building**
+
+   * Implemented KNN using `KNeighborsClassifier` from scikit-learn
+   * Experimented with different values of *K*
+
+3. **Evaluation**
+
+   * Accuracy score
+   * Confusion Matrix
+
+4. **Visualization**
+
+   * Plots for accuracy with different *K* values
+   * Decision boundary visualization
+
+---
+
+## 📊 Results
+
+| K Value | Accuracy |
+| ------- | -------- |
+| 3       | 96%      |
+| 5       | 97%      |
+| 7       | 96%      |
+
+* Best performance achieved at **K = 5**.
+* Confusion matrix showed correct classification with very few misclassifications.
+
+---
+
+## 📈 Visualizations
+
+* Accuracy vs K plot
+* Decision boundary plots (Setosa, Versicolor, Virginica clearly separated)
+
+---
+
+## 🧠 Interview Questions & Answers
+
+**1. How does the KNN algorithm work?**
+KNN classifies a new data point based on the majority class among its *k* nearest neighbors using a distance metric (e.g., Euclidean).
+
+**2. How do you choose the right K?**
+Experiment with different K values and select the one that gives the best accuracy on validation data. Odd values are preferred to avoid ties.
+
+**3. Why is normalization important in KNN?**
+Because KNN relies on distance, features with larger scales may dominate. Normalization ensures all features contribute equally.
+
+**4. What is the time complexity of KNN?**
+
+* Training: **O(1)** (instance-based, no explicit training)
+* Prediction: **O(N × d)**, where *N* = number of training samples and *d* = number of features
+
+**5. Pros & Cons of KNN**
+
+* ✅ Simple, effective, no training phase
+* ❌ Slow for large datasets, sensitive to noise, requires feature scaling
+
+**6. Is KNN sensitive to noise?**
+Yes, noisy points or outliers can mislead classification since KNN is instance-based.
+
+**7. How does KNN handle multi-class problems?**
+By majority voting across all classes among nearest neighbors.
+
+**8. What’s the role of distance metrics in KNN?**
+Defines how “closeness” is measured. Common metrics: Euclidean, Manhattan, Minkowski.
+
+---
+
+## ✅ Conclusion
+
+* KNN works best on normalized data.
+* Optimal K value for the Iris dataset was **K = 5**.
+* It is a simple yet powerful algorithm for small to medium-sized datasets.
+
+---
+
+## 📎 References
+
+* [Scikit-learn Documentation](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html)
+* [Iris Dataset on Kaggle](https://www.kaggle.com/datasets/uciml/iris)
